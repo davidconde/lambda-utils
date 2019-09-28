@@ -24,5 +24,8 @@
   "homepage": "https://github.com/davidconde/lambda-utils#readme",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "node-jose": "^1.1.3"
   }
 }
