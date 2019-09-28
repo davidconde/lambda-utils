@@ -1,0 +1,25 @@
+{
+  "name": "dcm-lambda-utils",
+  "version": "1.0.0",
+  "description": "Lambda utils by David CM",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidconde/lambda-utils.git"
+  },
+  "keywords": [
+        "aws lambda",
+        "lambda",
+        "lambda utilities",
+        "amazon lambda"
+    ],
+  "author": "David Conde Marin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidconde/lambda-utils/issues"
+  },
+  "homepage": "https://github.com/davidconde/lambda-utils#readme"
+}
