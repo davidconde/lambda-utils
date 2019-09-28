@@ -56,7 +56,7 @@ const parseToken = (token) => {
     }
 };
 
-const verifyCognitoJWTToken = async ({ pool, region, token }) => {    
+const verifyCognitoJWTToken = async (pool, region, token) => {    
     const parsedToken = parseToken(token);
     const publicKeyValue = await loadKeyDataForKeyId(parsedToken.keyId, pool, region);
 

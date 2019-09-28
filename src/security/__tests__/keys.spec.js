@@ -56,13 +56,7 @@ test('Returns null when specified key doesnt exist', async () => {
 });
 
 test('Can verify a token', async () => {
-    const params = {
-        token: testToken,
-        region: testRegion,
-        pool: testPool
-    };
-
-    const res = await keyManager.verifyCognitoJWTToken(params);
+    const res = await keyManager.verifyCognitoJWTToken(testPool, testRegion, testToken);
     expect(typeof res).toBe('object');
     expect(res['cognito:username']).toBe('david');
 });
