@@ -66,7 +66,7 @@ module.exports.doNothing = async (event, context) => {
     }
 
     try {
-        let validatedUser = await security.decodeJWTToken(parsedBody.token, process.env.cognitoPoolId, process.env.AWS_REGION);
+        let validatedUser = await Security.decodeJWTToken(parsedBody.token, process.env.cognitoPoolId, process.env.AWS_REGION);
 
         if (validatedUser === null) {
             return ResponseUtil.Error(400, 'Could not validate your token');
