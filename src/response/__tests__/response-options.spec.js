@@ -41,11 +41,15 @@ it ('CORS headers are present with supplied value', async () => {
 });
 
 const getCorsHeader = (headers) => {
-    const filtered = headers.filter(header => typeof header["Access-Control-Allow-Origin"] !== 'undefined');
-    return filtered.length > 0 ? filtered[0]["Access-Control-Allow-Origin"] : null;
+    if (!headers)
+        return null;
+
+    return headers["Access-Control-Allow-Origin"];
 }
 
 const hasCorsHeader = (headers) => {
-    const filtered = headers.filter(header => typeof header["Access-Control-Allow-Origin"] !== 'undefined');
-    return filtered.length > 0;
+    if (!headers)
+        return false;
+
+    return typeof headers["Access-Control-Allow-Origin"] !== "undefined";
 }

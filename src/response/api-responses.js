@@ -3,11 +3,11 @@ const getCorsHeaders = (settings) => {
     const corsDomain = settings && settings.corsAllowDomain || "*";
 
     if (!corsEnabled)
-        return [];
+        return {};
 
-    return [
-        { "Access-Control-Allow-Origin": corsDomain }
-    ];
+    return {
+        "Access-Control-Allow-Origin": corsDomain 
+    };
 }
 
 const OK = (response, settings = {}) => {
