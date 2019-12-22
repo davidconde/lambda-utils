@@ -1,6 +1,6 @@
 {
   "name": "dcm-lambda-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lambda utils by David CM",
   "main": "src/index.js",
   "scripts": {
