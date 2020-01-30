@@ -1,13 +1,13 @@
 const { OK, Error } = require('./../api-responses');
 
-it('CORS headers are not present by default', async () => {
+it('CORS headers are present by default', async () => {
     const jsonResponse = {};
     const result = OK(jsonResponse);
     const errorResult = Error(500, jsonResponse);
 
     //cors should not be set
-    expect(hasCorsHeader(result.headers)).toBe(false);
-    expect(hasCorsHeader(errorResult.headers)).toBe(false);
+    expect(hasCorsHeader(result.headers)).toBe(true);
+    expect(hasCorsHeader(errorResult.headers)).toBe(true);
 });
 
 it('CORS headers are present with default value when specified', async () => {

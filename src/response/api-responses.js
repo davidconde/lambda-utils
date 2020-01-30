@@ -1,5 +1,5 @@
 const getCorsHeaders = (settings) => {
-    const corsEnabled = settings && settings.cors || false;
+    const corsEnabled = settings && settings.cors || true;
     const corsDomain = settings && settings.corsAllowDomain || "*";
 
     if (!corsEnabled)
