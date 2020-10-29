@@ -29,6 +29,31 @@ module.exports.doNothing = async (event, context) => {
 
 ```
 
+## Logging operations
+
+In order to use the full benefits of structured logging, all that is required is to use the logger that comes bundled with the library. 
+
+By getting a logger, we will create an instance of [WinstonJS](https://github.com/winstonjs/winston) and the returned object will be a standard Winston logger object. For more docs on how to get started with Winston you can [use the official guide](https://github.com/winstonjs/winston#quick-start). 
+
+Using it is very simple:
+
+```
+const { BodyParser, getLogger } = require('dcm-lambda-utils');
+
+module.exports.doNothing = async (event, context) => {
+    const parsedBody = BodyParser(event);
+    const logger = getLogger();
+
+    if (parsedBody === null) {
+        logger.error("There was an attempt to parse the body of the function and it returned null");
+        return ResponseUtil.Error(400, 'Could not parse the body of the request');
+    }
+    
+    return ResponseUtil.OK({message: 'Parsed!', body: parsedBody});
+}
+
+```
+
 ## Parsing requests
 
 Parsing a request is pretty simple:
